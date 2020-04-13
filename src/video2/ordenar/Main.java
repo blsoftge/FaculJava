@@ -1,0 +1,56 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package video2.ordenar;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author blsoft
+ */
+public class Main {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        int qteNumerosDigitados;
+        int vetor[];
+        int auxiliarDeTrocas = 0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Este programa recebe numeros inteiros e calcula o maior e o menor");
+        System.out.println("\nInforme quantos numeros pretende digitar: ");
+        qteNumerosDigitados = sc.nextInt();
+
+        vetor = new int[qteNumerosDigitados];
+
+        for (int i = 0; i < qteNumerosDigitados; i++) {
+
+            System.out.println("\nInforme o " + (i + 1) + "º  valor e aperte Enter para continuar: ");
+            vetor[i] = sc.nextInt();
+        }
+
+           
+        //[10,20,5,19]
+        for (int i = 0; i < qteNumerosDigitados; i++) {
+            for (int j = 0; j < qteNumerosDigitados; j++) {
+                if (vetor[i] < vetor[j]) {
+                    auxiliarDeTrocas = vetor[i];
+                    vetor[i] = vetor[j];
+                    vetor[j] = auxiliarDeTrocas;
+                }
+            }
+        }
+
+        for (int i = 0; i < qteNumerosDigitados; i++) {
+            System.out.println(vetor[i]);
+        }
+
+    }
+
+}
