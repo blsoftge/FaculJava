@@ -20,7 +20,7 @@ public class Main {
 
         int qteNumerosDigitados;
         int vetor[];
-        int auxiliarDeTrocas = 0;
+        int auxiliar = 0;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Este programa recebe numeros inteiros e calcula o maior e o menor");
@@ -35,21 +35,27 @@ public class Main {
             vetor[i] = sc.nextInt();
         }
 
-           
-        //[10,20,5,19]
+        //i = 0
+        //j = 0
+        //[5,10,19,20]
         for (int i = 0; i < qteNumerosDigitados; i++) {
+
             for (int j = 0; j < qteNumerosDigitados; j++) {
-                if (vetor[i] < vetor[j]) {
-                    auxiliarDeTrocas = vetor[i];
+                
+                //trocamos os valores do vetor caso posicao i seja menor que j
+                if(vetor[i] < vetor[j]){
+                    auxiliar = vetor[i];
                     vetor[i] = vetor[j];
-                    vetor[j] = auxiliarDeTrocas;
+                    vetor[j] = auxiliar;
                 }
+                
             }
         }
-
-        for (int i = 0; i < qteNumerosDigitados; i++) {
-            System.out.println(vetor[i]);
+        
+        for (int k = 0; k < qteNumerosDigitados; k++) {
+            System.out.println(vetor[k]);
         }
+        
 
     }
 
