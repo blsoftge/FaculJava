@@ -55,8 +55,7 @@ public class Main {
         for (int k = 0; k < qteNumerosDigitados; k++) {
             System.out.println(vetor[k]);
         }
-        
 
+        sc.close();
     }
-
 }
